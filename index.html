@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🎨 Pixel Art Maker</title>
+
+    <meta name="color-scheme" content="dark light" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./main.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+    <h1>🎨 Pixel Art Maker</h1>
+    <div class="controls" role="group" aria-label="Drawing controls">
+        <label for="color" class="visually-hidden">Color picker</label>
+        <input type="color" id="color" value="#ff006e" aria-label="Color picker" />
+
+        <button type="button" id="eraser" title="Eraser" aria-pressed="false">Eraser</button>
+        <button type="button" id="clear" title="Clear grid">Clear</button>
+        <button type="button" id="save" title="Download PNG">Save PNG</button>
+
+        <label class="size" for="size">Size:</label>
+        <select id="size" aria-label="Grid size">
+            <option>16</option>
+            <option selected>24</option>
+            <option>32</option>
+            <option>48</option>
+        </select>
+
+        <button type="button" id="newGrid">New Grid</button>
+
+        <label class="tool">
+            <input type="checkbox" id="eyedrop" />
+            Eyedropper
+        </label>
+    </div>
+</header>
+
+<main>
+    <section aria-labelledby="canvas-title">
+        <h2 id="canvas-title" class="visually-hidden">Pixel canvas</h2>
+        <div id="grid" class="grid" role="grid" aria-label="Pixel canvas"></div>
+    </section>
+</main>
+
+<footer class="foot">
+    <span>Tip: Click & drag to paint. Hold Shift for straight lines.</span>
+</footer>
+
+<!-- Optional helper for screen-reader-only text -->
+<style>
+    .visually-hidden {
+        position: absolute !important;
+        width: 1px; height: 1px;
+        margin: -1px; padding: 0; border: 0;
+        clip: rect(0 0 0 0); clip-path: inset(50%);
+        overflow: hidden; white-space: nowrap;
+    }
+</style>
+</body>
+</html>
